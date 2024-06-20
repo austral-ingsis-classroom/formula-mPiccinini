@@ -1,3 +1,14 @@
 package edu.austral.ingsis.math;
 
-public interface Function {}
+import java.util.Optional;
+import java.util.Set;
+
+public interface Function {
+    double solve();
+
+    String toString();
+
+    Optional<Set<String>> getVariables();
+
+    FunctionEnum getType();
+}

@@ -1,0 +1,65 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Function {
+  +solve(): double
+  +toString(): String
+  +getVariables(): Optional<Set<String>>
+  +getType(): FunctionEnum
+}
+
+abstract class Value<T> implements Function {
+  -T: value
+}
+
+abstract class TwoElementOperation implements Function {
+  -Function: elementA
+  -Function: elementB
+}
+
+abstract class OneElementOperation implements Function {
+  -Function: element
+}
+
+class Number<BigDecimal> extends Value {
+  -BigDecimal: number
+}
+
+class Variable<String> extends Value {
+  -String: variable
+}
+
+class Add extends TwoElementOperation {
+  -Function: elementA
+  -Function: elementB
+}
+
+class Subtract extends TwoElementOperation {
+  -Function: elementA
+  -Function: elementB
+}
+
+class Divide extends TwoElementOperation {
+  -Function: elementA
+  -Function: elementB
+}
+
+class Multiply extends TwoElementOperation {
+  -Function: elementA
+  -Function: elementB
+}
+
+class Elevate extends TwoElementOperation {
+  -Function: elementA
+  -Function: elementB
+}
+
+class AbsoluteValue extends OneElementOperation {
+  -Function: element
+}
+
+class SquareRoot extends OneElementOperation {
+  -Function: element
+}
+
+@enduml
