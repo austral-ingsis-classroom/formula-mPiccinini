@@ -4,11 +4,11 @@ import java.util.Optional;
 import java.util.Set;
 
 public interface Function {
-    double solve();
+  double solve();
 
-    String toString();
+  String toString();
 
-    Optional<Set<String>> getVariables();
+  Optional<Set<String>> getVariables();
 
-    FunctionEnum getType();
+  FunctionEnum getType();
 }
